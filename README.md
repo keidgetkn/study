@@ -1,2 +1,2 @@
-# study
-## for Docker Image
+# コンテナ勉強会
+## Dockerイメージリポジトリ

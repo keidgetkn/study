@@ -1,0 +1,30 @@
+Dockerボリューム一覧表示
+sudo docker volume ls
+
+コンテナにDockerボリュームをマウント
+sudo docker run -d -p 8080:80 -v mycontents:/usr/local/apache2/htdocs --name websv httpd
+sudo docker volume ls
+sudo docker cp index.html websv:/usr/local/apache2/htdocs
+
+sudo docker stop websv
+sudo docker rm websv
+sudo docker volume ls
+
+作成済みDockerボリュームをマウントしてデータ永続化確認
+sudo docker run -d -p 8080:80 -v mycontents:/usr/local/apache2/htdocs --name websv httpd
+
+sudo docker run -d -p 8081:80 -v mycontents2:/usr/local/apache2/htdocs --name websv2 httpd
+sudo docker volume ls
+
+Dockerボリューム削除
+sudo docker stop websv websv2
+sudo docker rm websv websv2
+sudo docker volume rm mycontents mycontents2
+
+ホストディレクトリをコンテナにマウント
+mkdir mydata
+sudo docker run -d -p 8080:80 -v /home/oec/websv/mydata:/usr/local/apache2/htdocs --name websv httpd
+sudo docker volume ls
+
+cd mydata
+vi index.html

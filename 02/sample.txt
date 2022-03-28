@@ -20,9 +20,6 @@ kubectl get namespaces
 ネームスペース作成
 kubectl create namespace ネームスペース名
 
-ネームスペース削除
-kubectl delete namespaces ネームスペース名
-
 宣言適用
 kubectl apply -f YAMLファイル名
 
@@ -34,3 +31,4 @@ Kubernetesオブジェクト削除
 kubectl delete -f YAMLファイル名
 kubectl delete pods Pod名
 kubectl delete services Service名
+kubectl delete namespaces ネームスペース名

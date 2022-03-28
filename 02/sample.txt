@@ -14,6 +14,12 @@ kubectl get services
 すべての一覧
 kubectl get all
 
+ネームスペース一覧
+kubectl get namespaces
+
+ネームスペース作成
+kubectl create namespaces ネームスペース名
+
 宣言適用
 kubectl apply -f YAMLファイル名
 

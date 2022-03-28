@@ -1,0 +1,27 @@
+ノード一覧
+kubectl get nodes
+kubectl get nodes -o wide
+
+Pod一覧
+kubectl get pods
+kubectl get pods --all-namespaces
+kubectl get pods -A
+kubectl get pods -n ネームスペース名
+
+Service一覧
+kubectl get services
+
+すべての一覧
+kubectl get all
+
+宣言適用
+kubectl apply -f YAMLファイル名
+
+Kubernetesオブジェクト詳細確認
+kubectl describe pods Pod名
+kubectl describe services Service名
+
+Kubernetesオブジェクト削除
+kubectl delete -f YAMLファイル名
+kubectl delete pods Pod名
+kubectl delete services Service名

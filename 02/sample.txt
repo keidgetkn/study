@@ -18,7 +18,10 @@ kubectl get all
 kubectl get namespaces
 
 ネームスペース作成
-kubectl create namespaces ネームスペース名
+kubectl create namespace ネームスペース名
+
+ネームスペース削除
+kubectl delete namespaces ネームスペース名
 
 宣言適用
 kubectl apply -f YAMLファイル名

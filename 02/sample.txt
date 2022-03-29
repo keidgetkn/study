@@ -11,11 +11,14 @@ kubectl get pods -n ネームスペース名
 Service一覧
 kubectl get services
 
-すべての一覧
-kubectl get all
-
 ネームスペース一覧
 kubectl get namespaces
+
+すべての一覧※基本的なオブジェクトが対象
+kubectl get all
+
+単体Pod作成
+kubectl run Pod名 --image=イメージ名 --restart=Never
 
 ネームスペース作成
 kubectl create namespace ネームスペース名
@@ -32,3 +35,6 @@ kubectl delete -f YAMLファイル名
 kubectl delete pods Pod名
 kubectl delete services Service名
 kubectl delete namespaces ネームスペース名
+
+Pod内のプログラムを実行※以下の例はシェルを起動する場合
+kubectl exec --stdin --tty Pod名 -- /bin/bash

@@ -1,0 +1,29 @@
+sudo docker -v
+sudo docker info
+sudo docker ps
+sudo docker image ls
+sudo docker volume ls
+sudo docker network ls
+
+コンテナ実行
+sudo docker run -d --name websv httpd
+sudo docker ps
+ps aux
+sudo docker image ls
+
+ログ表示
+sudo docker logs websv　※標準エラー出力
+
+コンテナ停止
+sudo docker stop websv
+sudo docker ps
+sudo docker ps -a
+
+コンテナ削除
+sudo docker rm websv
+sudo docker ps -a
+
+イメージ削除
+sudo docker image ls
+sudo docker rmi httpd
+sudo docker image ls

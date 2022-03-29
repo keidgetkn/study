@@ -1,0 +1,10 @@
+コンテナにファイルをコピー
+cd
+mkdir websv
+cd websv
+vi index.html
+
+sudo docker cp index.html websv:/usr/local/apache2/htdocs
+
+sudo docker stop websv
+sudo docker rm websv

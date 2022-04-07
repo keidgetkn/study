@@ -37,7 +37,8 @@ kubectl delete services Service名
 kubectl delete namespaces ネームスペース名
 
 Pod内のプログラムを実行※以下の例はシェルを起動する場合
-kubectl exec --stdin --tty Pod名 -- /bin/bash
+kubectl exec Pod名 --stdin --tty -- /bin/bash
+kubectl exec Pod名 --ti -- /bin/bash
 
 Podのログを確認（標準出力に出しているエラー）
 kubectl logs Pod名

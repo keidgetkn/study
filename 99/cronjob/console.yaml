@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: console-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: console
+  template:
+    metadata:
+      labels:
+        app: console
+    spec:
+      containers:
+      - image: mysql:5.7.37
+        name: mysql
+        volumeMounts:
+        - name: mysql-backup
+          mountPath: /backup
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: root
+      volumes:
+      - name: mysql-backup
+        persistentVolumeClaim:
+          claimName: backup-pv-claim

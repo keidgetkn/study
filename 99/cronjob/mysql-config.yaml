@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mysql-config
+data:
+  user: "root"
+  db: "testdb"
+  host: "mysql-svc"

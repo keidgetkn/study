@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: mysql-init
+spec:
+  template:
+    spec:
+      containers:
+      - image: localhost:32000/job01
+        name: job01-container
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: password
+        command: ["sh", "-c"]
+        args: ["mysql -u root -p${MYSQL_ROOT_PASSWORD} -h mysql-svc < /init.sql"]
+      restartPolicy: OnFailure
